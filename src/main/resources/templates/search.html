@@ -34,10 +34,19 @@
         <input type="submit" value="Search" />
     </form>
 
-    <hr />
-
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <h1 th:text="${jobs.size()+' Result' + '(' +'s' + ')'}"></h1>
 
+    <hr />
+    <div th:fragment="list-all">
+        <table th:each="job : ${jobs}">
+            <tr th:each="field : ${job}">
+                <td th:text="${#strings.capitalizeWords(field.key)}"></td>
+                <td th:text="${field.value}"></td>
+            </tr>
+            <td></td>
+        </table>
+    </div>
 </div>
 
 </body>
