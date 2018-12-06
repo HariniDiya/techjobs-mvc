@@ -37,7 +37,7 @@ public class SearchController {
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
-        System.out.println(jobs);
+        System.out.println(jobs+"\n");
         model.addAttribute("jobs", jobs);
 
         return "search";
